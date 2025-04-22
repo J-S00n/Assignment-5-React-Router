@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+// import './App.css'
+import HomeView from './views/HomeView';
 
 function App() {
   return (
-    <>
-    </>
+    <div>
+      <HomeView />
+    </div>
   )
 }
 
-export default App
+export default App;
