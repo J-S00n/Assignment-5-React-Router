@@ -1,0 +1,22 @@
+import { useNavigate } from "react-router-dom";
+
+function RegisterView() {
+    const navigate = useNavigate();
+
+    return (
+        <div className="register-view">
+            <h1>Register</h1>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                // Handle registration logic here
+                navigate('/home');
+            }}>
+                <input type="text" placeholder="Username" required />
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    );
+}
+export default RegisterView;

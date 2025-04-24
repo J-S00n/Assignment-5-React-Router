@@ -1,10 +1,10 @@
-import "../HomeView.css";
+import "./HomeView.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Feature from "./components/Feature";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Feature from "../components/Feature";
+import Footer from "../components/Footer";
 
 function HomeView() {
     return (
