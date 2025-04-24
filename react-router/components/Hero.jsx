@@ -8,7 +8,7 @@ function Hero() {
         <div className="hero">
             <h1>Rent movies anytime, anywhere</h1>
             <p>Vibe to a world of possibilities</p>
-            <button class="start">Get Started</button>
+            <button className="start">Get Started</button>
         </div>
     );
 }

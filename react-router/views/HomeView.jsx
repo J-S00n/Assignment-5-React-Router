@@ -1,6 +1,4 @@
 import "./HomeView.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Feature from "../components/Feature";
