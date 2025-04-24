@@ -1,4 +1,5 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import "./MoviesView.css";
 
 function MoviesView() {
     const navigate = useNavigate();

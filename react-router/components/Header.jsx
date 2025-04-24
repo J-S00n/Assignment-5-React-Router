@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Header({children}) {
+function Header({ children }) {
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    return(
+    return (
         <div className="header">
             <h1>VibeVision</h1>
-            <button onClick={() => navigate('/login')}className="login">Login</button>
-            <button onClick={() => navigate('/register')}className="register">Register</button>
+            <button onClick={() => navigate('/login')} className="login">Login</button>
+            <button onClick={() => navigate('/register')} className="register">Register</button>
             {children}
         </div>
     );

@@ -1,12 +1,21 @@
 import { useNavigate } from "react-router-dom";
+import "./LoginView.css"
 
 function LoginView() {
     const navigate = useNavigate();
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const username = e.target[0].value;
+        const password = e.target[1].value;
+        // Perform validation here (e.g., check if username and password are correct)
+        if (!username || !password) {
+            alert("Please fill in all fields.");
+            return;
+        }
         // Perform login logic here
         // After successful login, navigate to the movies view
-        navigate("/movies");
+        navigate("/home");
     };
 
     return (

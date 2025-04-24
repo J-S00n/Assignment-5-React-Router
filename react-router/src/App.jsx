@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<LoginView />} />
         <Route path="/register" element={<RegisterView />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/movies" element={<MoviesView />}>
+          <Route path="/home" element={<MoviesView />}>
             {/* <Route path="/genre" element={<GenreView />} /> */}
             {/* <Route path="/detail/:id" element={<DetailView />} /> */}
           </Route>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Footer () {
+function Footer() {
 
     return (
         <div className="footer">

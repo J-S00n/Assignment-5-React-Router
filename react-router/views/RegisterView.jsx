@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./RegisterView.css";
 
 function RegisterView() {
     const navigate = useNavigate();
