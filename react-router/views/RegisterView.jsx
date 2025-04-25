@@ -12,9 +12,11 @@ function RegisterView() {
                 // Handle registration logic here
                 navigate('/home');
             }}>
-                <input type="text" placeholder="Username" required />
+                <input type="text" placeholder="First Name" required />
+                <input type="text" placeholder="Last Name" required />
                 <input type="email" placeholder="Email" required />
                 <input type="password" placeholder="Password" required />
+                <input type="password" placeholder="Re-enter Password" required />
                 <button type="submit">Register</button>
             </form>
         </div>
