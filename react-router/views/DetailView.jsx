@@ -5,7 +5,7 @@ import "./DetailView.css";
 
 function DetailView () {
     const param = useParams();
-    const [movie, setMovie] = useState({});
+    const [movie, setMovie] = useState([]);
 
     useEffect(() => {
         async function getMovieDetails() {

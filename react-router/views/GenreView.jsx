@@ -4,8 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./GenreView.css";
 
 function GenreView() {
-    const location = useLocation();
-    const genre = location.pathname.split("/").pop(); // Extract genre from URL
+    const location = useLocation().pathname.split("/")[2]; // Extract genre from URL
     const navigate = useNavigate();
     const [movies, setMovies] = useState([]);
 
@@ -20,15 +19,14 @@ function GenreView() {
         };
 
         getMovies();
-    }, [genre]);
+    }, [location]);
 
     return (
         <div className="genre-view">
-            <h1>{genre} Movies</h1>
             <div className="movie-list">
-                {movies.map((movie) => (
+                {movies && movies.map((movie) => (
                     <div key={movie.id} className="movie-card" onClick={() => navigate(`/movies/${movie.id}`)}>
-                        <h2>{movie.title}</h2>
+                        <h1>{`${movie.title}`}</h1>
                         <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.id}`} /> 
                     </div>
                 ))}

@@ -22,8 +22,8 @@ function App() {
             <Route path="popular" element={<GenreView />}></Route>
             <Route path="top_rated" element={<GenreView />}></Route>
             <Route path="upcoming" element={<GenreView />}></Route>
-            <Route path="/genre/:genre_id" element={<GenreView />}></Route>
-            <Route path="/details/:id" element={<DetailView />}></Route>
+            <Route path="genre/:genre_id" element={<GenreView />}></Route>
+            <Route path=":id" element={<DetailView />}></Route>
           </Route>
         </Route>
         <Route path="*" element={<ErrorView />} />

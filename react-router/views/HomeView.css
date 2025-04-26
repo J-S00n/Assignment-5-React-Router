@@ -20,7 +20,8 @@
     flex-wrap: wrap;
     align-items: left;
     gap: 15px;
-    background-color: #f1faee;
+    background-color: #1d3557;
+    color: white;
 }
 
 .header h1 {
