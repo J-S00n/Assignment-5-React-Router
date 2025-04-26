@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Header({ children }) {
     const navigate = useNavigate();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     return (
         <div className="header">

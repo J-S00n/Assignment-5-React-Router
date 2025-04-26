@@ -4,15 +4,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./GenreView.css";
 
 function GenreView() {
-    const genre = useLocation();
+    const location = useLocation();
+    const genre = location.pathname.split("/").pop(); // Extract genre from URL
     const navigate = useNavigate();
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         const getMovies = async () => {
             try {
-                const response = await axios.get(`https://api.themoviedb.org/3/movie/${location}?api_key=${import.meta.env.VITE_TMDB_KEY}`).data.results;
-                setMovies(response.data);
+                const response = await axios.get(`https://api.themoviedb.org/3/movie/${location}?api_key=${import.meta.env.VITE_TMDB_KEY}`);
+                setMovies(response.data.results);
             } catch (error) {
                 console.error("Error fetching movies:", error);
             }
