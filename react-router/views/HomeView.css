@@ -31,31 +31,27 @@
     margin-right: auto;
 }
 
-.login {
-    align-items: left;
-    padding: 5px 15px;
+.login, .register {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
     background-color: #e63946;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 20px;
     cursor: pointer;
-    margin-left: 5px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    transition: background-color 0.3s ease;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.register {
-    align-items: left;
-    padding: 5px 10px;
-    background-color: #e63946;
-    color: white;
-    font-size: 10px;
-    cursor: pointer;
-    margin-left: 10px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
+.login:hover, .register:hover {
+    background-color: #d62839;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .hero {
@@ -90,18 +86,27 @@
 }
 
 .start {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     background-color: #e63946;
     color: white;
-    padding: 15px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.start:hover {
+    background-color: #d62839;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .start:hover {
@@ -149,24 +154,6 @@
 
 .feature-item p {
     color: #555;
-}
-
-.endgame {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.interstellar {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.topgun {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
 }
 
 .footer {

@@ -1,19 +1,22 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./MoviesView.css";
+import Header from "../components/Header.jsx";
+import Genres from "../components/Genres.jsx";
+import Footer from "../components/Footer.jsx";
 
 function MoviesView() {
+
     const navigate = useNavigate();
 
     return (
-        <div className="movies-view">
-            <h1 className="movies-title">Movies</h1>
-            <nav className="movies-nav">
-                <NavLink to="/movies" className="nav-link">All Movies</NavLink>
-                <NavLink to="/movies/genre" className="nav-link">Genre</NavLink>
-                <NavLink to="/movies/detail/:id" className="nav-link">Detail</NavLink>
-            </nav>
-            <button onClick={() => navigate(-1)} className="back-button">Back</button>
-            <Outlet />
+        <div className="movies-container">
+            <Header />
+            <Genres />
+            <div className="movies-nav">
+                <button onClick={() => navigate('/movies/genre')} className="genre">Genre</button>
+                <button onClick={() => navigate('/movies/details')} className="details">Details</button>
+            </div>
+            <Footer />
         </div>
     );
 }

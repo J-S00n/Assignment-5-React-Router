@@ -4,23 +4,20 @@ import { useParams } from 'react-router-dom';
 import "./DetailView.css";
 
 function DetailView () {
-    const { id } = useParams();
-    const [movie, setMovie] = useState([]);
+    const param = useParams();
+    const [movie, setMovie] = useState({});
 
     useEffect(() => {
-        const getMovieDetails = async () => {
+        async function getMovieDetails() {
             try {
-                const response = await axios.get(`https://api.themoviedb.org/3/movie/${param.id}?api_key=${import.meta.env.VITE_TMDB_KEY}`).data;
-                setMovie(response.data);
+                setMovie((await axios.get(`https://api.themoviedb.org/3/movie/${param.id}?api_key=${import.meta.env.VITE_TMDB_KEY}`)).data);
             } catch (error) {
                 console.error('Error fetching movie details:', error);
             }
         };
 
         getMovieDetails();
-    }, [id]);
-
-    if (!movie) return <div>Loading...</div>;
+    }, []);
 
     return (
         <div className="detail-view">
