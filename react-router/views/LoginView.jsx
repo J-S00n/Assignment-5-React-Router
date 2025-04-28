@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./LoginView.css"
 
 function LoginView() {
@@ -29,6 +29,9 @@ function LoginView() {
                 <button type="submit" className="login-button">
                     Login
                 </button>
+                <p className="register-link">
+                    Don't have an account? <Link to="/register">Register</Link>
+                </p>
             </form>
         </div>
     );

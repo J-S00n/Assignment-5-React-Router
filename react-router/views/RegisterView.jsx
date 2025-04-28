@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./RegisterView.css";
 
 function RegisterView() {
@@ -40,6 +40,9 @@ function RegisterView() {
                     placeholder="Re-enter Password"
                     required />
                 <button type="submit">Register</button>
+                <p className="login-link">
+                    Already have an account? <Link to="/login">Login</Link>
+                </p>
             </form>
         </div>
     );
