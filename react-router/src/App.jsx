@@ -4,7 +4,7 @@ import LoginView from '../Views/LoginView.jsx';
 import RegisterView from '../Views/RegisterView.jsx';
 import ErrorView from '../views/ErrorView.jsx';
 import MoviesView from '../views/MoviesView.jsx';
-import GenreView from '../views/GenreView.jsx';
+import GenreView from '../Views/GenreView.jsx';
 import DetailView from '../views/DetailView.jsx';
 import ProtectedRoutes from '../Views/ProtectedRoutes.jsx';
 import './App.css'

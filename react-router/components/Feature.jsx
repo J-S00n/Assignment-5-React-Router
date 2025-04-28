@@ -61,7 +61,7 @@ function Feature() {
                 )}
                 <div className="pagination">
                     <button className="previous-button" onClick={() => getMoreMovies(-1)} disabled={loading}>Previous</button>
-                    <button className="next-button"onClick={() => getMoreMovies(1)} disabled={loading}>Next</button>
+                    <button className="next-button" onClick={() => getMoreMovies(1)} disabled={loading}>Next</button>
                 </div>
                 {loading && <p>Loading...</p>}
             </div>

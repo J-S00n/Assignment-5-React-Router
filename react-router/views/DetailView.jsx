@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./DetailView.css";
 
-function DetailView () {
+function DetailView() {
     const param = useParams();
     const [movie, setMovie] = useState([]);
 
