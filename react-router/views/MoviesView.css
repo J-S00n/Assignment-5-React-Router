@@ -114,6 +114,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
 }
 
 .genres ul {
@@ -122,6 +123,7 @@
     padding: 0;
     margin: 0;
     gap: 20px;
+    flex-wrap: wrap; /* Ensures the list items wrap within the container */
 }
 
 .genres li {

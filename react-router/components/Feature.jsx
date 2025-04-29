@@ -44,7 +44,6 @@ function Feature() {
         getMovies();
     }, []);
 
-
     return (
         <div className="feature-container">
             <h1>Featured Movies</h1>
