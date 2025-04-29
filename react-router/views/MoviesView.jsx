@@ -1,10 +1,12 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import "./MoviesView.css";
 import Genres from "../components/Genres.jsx";
 import Footer from "../components/Footer.jsx";
+import Feature from "../components/Feature.jsx";
 
 function MoviesView() {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const genres = [
         { genre: "Action", id: 28 },
@@ -30,6 +32,9 @@ function MoviesView() {
             </div>
             <div className="genres">
                 <Genres genresList={genres} />
+            </div>
+            <div className="featured-movies">
+                {location.pathname === "/movies" && <Feature />}
             </div>
             <div className="outlet">
                 <Outlet />

@@ -19,7 +19,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/movies" element={<MoviesView />}>
             <Route path="genre/:id" element={<GenreView />}></Route>
-            <Route path="detail/:id" element={<DetailView />}></Route>
+            <Route path="details/:id" element={<DetailView />}></Route>
           </Route>
         </Route>
         <Route path="*" element={<ErrorView />} />

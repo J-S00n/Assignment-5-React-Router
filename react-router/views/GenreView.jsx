@@ -5,23 +5,21 @@ import "./GenreView.css";
 
 
 function GenreView() {
-    // const location = useLocation().pathname.split("/")[2]; // Extract genre from URL
     const navigate = useNavigate();
     const params = useParams();
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1);
-    const [maxPage, setMaxPage] = useState(0);
-
+    const [totalResults, setTotalResults] = useState(0);
+    const moviesPerPage = 20; // Number of movies per page
 
     useEffect(() => {
-        setPage(1);
         const getGenre = async () => {
             try {
                 const response = await axios.get(
                     `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${params.id}&page=${page}`
                 );
-                setMovies(response.data.results);
-                setMaxPage(response.data.total_pages);
+                setMovies(response.data.results.slice(0, moviesPerPage));
+                setTotalResults(response.data.total_results)
             } catch (error) {
                 console.error("Error fetching movies:", error);
             }
@@ -29,15 +27,10 @@ function GenreView() {
         getGenre();
     }, [page, params.id]);
 
-    function previousPage() {
-        if (page > 1) {
-            setPage(page - 1);
-        }
-    }
-    function nextPage() {
-        if (page < maxPage) {
-            setPage(page + 1);
-        }
+    const maxPage = Math.ceil(totalResults / moviesPerPage); // Calculate the total number of pages
+
+    function paginateMovies(newPage) {
+        setPage(newPage);
     }
 
     return (
@@ -46,7 +39,7 @@ function GenreView() {
                 {movies.length > 0 ? (
                     movies.map((movie) => (
                         <img className="movie-image" key={movie.id} height={"300px"} style={{ cursor: "pointer" }}
-                            onClick={() => navigate(`/movies/detail/${movie.id}`)}
+                            onClick={() => navigate(`/movies/details/${movie.id}`)}
                             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                             alt={movie.title} />
                     ))
@@ -54,11 +47,23 @@ function GenreView() {
                     <p>Loading content</p>
                 )}
             </div>
-            <div className="button-container">
-                <button className="page-button" style={{ curosr: "pointer" }} onClick={() => previousPage()}>Previous Page</button>
-                <button className="page-button" style={{ cursor: "pointer" }} onClick={() => nextPage()} >Next Page</button>
+            <div className="pagination">
+                <button
+                    disabled={page === 1}
+                    onClick={() => paginateMovies(page - 1)}
+                >
+                    Previous
+                </button>
+                <span>
+                    Page {page} of {maxPage}
+                </span>
+                <button
+                    disabled={page === maxPage}
+                    onClick={() => paginateMovies(page + 1)}
+                >
+                    Next
+                </button>
             </div>
-            <p id="page-count">Page: {page}/{maxPage}</p>
         </div>
     );
 }
