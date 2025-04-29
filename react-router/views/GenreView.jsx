@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./GenreView.css";
 
-
 function GenreView() {
     const navigate = useNavigate();
     const params = useParams();
@@ -67,6 +66,5 @@ function GenreView() {
         </div>
     );
 }
-
 
 export default GenreView;
