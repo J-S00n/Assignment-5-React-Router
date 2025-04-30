@@ -30,14 +30,14 @@ function MoviesView() {
                 <h1>VibeVision</h1>
                 <button onClick={() => navigate('/')} className="logout">Logout</button>
             </div>
-            <div className="genres">
-                <Genres genresList={genres} />
-            </div>
-            <div className="featured-movies">
-                {location.pathname === "/movies" && <Feature />}
-            </div>
-            <div className="outlet">
-                <Outlet />
+            <div className="genres-and-movies">
+                <div className="genres">
+                    <Genres genresList={genres} />
+                </div>
+                <div className="movie-list">
+                    {(location.pathname === "/movies" || location.pathname === "/movies/") && <Feature />}
+                    <Outlet />
+                </div>
             </div>
             <Footer />
         </div>

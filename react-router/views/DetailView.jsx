@@ -32,6 +32,7 @@ function DetailView() {
                 <p><strong>Genres:</strong> {movie.genres && movie.genres.map((genre) => genre.name).join(', ')}</p>
                 <p><strong>Language:</strong> {movie.original_language}</p>
                 <p><strong>Release Date:</strong> {movie.release_date}</p>
+                <p><strong>Budget:</strong> {movie.budget ? `$${movie.budget.toLocaleString()}` : 'N/A'}</p>
                 <p><strong>Runtime:</strong> {movie.runtime} minutes</p>
                 <p><strong>Rating:</strong> {movie.vote_average}</p>
                 <p><strong>Overview:</strong> {movie.overview}</p>

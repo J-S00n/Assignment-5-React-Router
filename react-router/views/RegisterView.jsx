@@ -7,7 +7,7 @@ function RegisterView() {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        navigate("/movies");
+        navigate("/movies/genre/28");
     };
 
     return (

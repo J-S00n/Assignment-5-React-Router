@@ -7,7 +7,7 @@ function LoginView() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        navigate("/movies");
+        navigate("/movies/genre/28");
     };
 
     return (
