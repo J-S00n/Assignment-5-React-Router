@@ -11,26 +11,6 @@ function Feature() {
         return array.sort(() => Math.random() - 0.5);
     };
 
-    const getMoreMovies = async (direction) => {
-        const nextPage = page.current + direction;
-        if (nextPage > 0 && nextPage <= pages.current) {
-            setLoading(true);
-            page.current = nextPage;
-            try {
-                const response = await axios.get(
-                    `https://api.themoviedb.org/3/movie/now_playing?page=${nextPage}&api_key=${import.meta.env.VITE_TMDB_KEY}`
-                );
-                const shuffledMovies = shuffleArray(response.data.results);
-                setMovies(shuffledMovies);
-                pages.current = response.data.total_pages;
-            } catch (error) {
-                console.error("Error fetching movies:", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-    };
-
     useEffect(() => {
         const getMovies = async () => {
             setLoading(true);
@@ -64,10 +44,6 @@ function Feature() {
                         </div>
                     ))
                 )}
-                <div className="pagination">
-                    <button className="previous-button" onClick={() => getMoreMovies(-1)} disabled={loading}>Previous</button>
-                    <button className="next-button" onClick={() => getMoreMovies(1)} disabled={loading}>Next</button>
-                </div>
                 {loading && <p>Loading...</p>}
             </div>
         </div>
